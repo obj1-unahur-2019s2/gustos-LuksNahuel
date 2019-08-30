@@ -1,0 +1,50 @@
+import personas.*
+import objetos.*
+import bolichito.*
+
+test "Gustos Rosa" {
+	assert.equals(true, rosa.leGusta(remera))
+	assert.equals(false, rosa.leGusta(biblioteca))
+	placa.peso(3500)
+	assert.equals(false, rosa.leGusta(placa))
+}
+
+test "Bolichito es brillante y está desequilibrado" {
+	bolichito.ponerEnMostrador(munieco)
+	munieco.peso(4000)
+	bolichito.ponerEnVidriera(placa)
+	placa.peso(1200)
+	assert.that(bolichito.esBrillante())
+	assert.that(bolichito.estaDesequilibrado())
+}
+
+test "Bolichito tiene algo de color rojo y verde pero no pardo" {
+	bolichito.ponerEnMostrador(remera)
+	bolichito.ponerEnVidriera(biblioteca)
+	assert.that(bolichito.tieneAlgoDeColor(rojo))
+	assert.that(bolichito.tieneAlgoDeColor(verde))
+	assert.notThat(bolichito.tieneAlgoDeColor(pardo))
+}
+
+test "Bolichito puede mejorar" {
+	bolichito.ponerEnMostrador(munieco)
+	munieco.peso(4000)
+	bolichito.ponerEnVidriera(placa)
+	placa.peso(1200)
+	assert.that(bolichito.puedeMejorar())
+}
+
+test "Bolichito no puede mejorar" {
+	bolichito.ponerEnMostrador(munieco)
+	munieco.peso(100)
+	bolichito.ponerEnVidriera(biblioteca)
+	assert.notThat(bolichito.puedeMejorar())
+}
+
+test "Bolichito puede ofrecerle algo a Estefania y a Juan pero no a Luisa" {
+	bolichito.ponerEnMostrador(pelota)
+	bolichito.ponerEnVidriera(remera)
+	assert.that(bolichito.puedeOfrecerleAlgoA(estefania))
+	assert.that(bolichito.puedeOfrecerleAlgoA(juan))
+	assert.notThat(bolichito.puedeOfrecerleAlgoA(luisa))
+}
