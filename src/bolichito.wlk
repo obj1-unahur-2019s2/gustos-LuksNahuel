@@ -1,4 +1,5 @@
 import objetos.*
+import personas.*
 
 object bolichito {
 	var objetoEnMostrador
