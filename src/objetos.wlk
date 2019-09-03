@@ -123,10 +123,9 @@ object banquito {
 
 object cajita {
 	var objetoDentro
-	var pesoCajita = 400
 	
 	method peso() {
-		return pesoCajita + objetoDentro.peso()
+		return 400 + objetoDentro.peso()
 	}
 	method objetoDentro() { return objetoDentro }
 	method objetoDentro(ponerObjeto) { objetoDentro = ponerObjeto }
